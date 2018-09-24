@@ -1,0 +1,19 @@
+<h1 class="h1-small-margin">Add Post</h1>
+<%= form_for(:post, url: posts_path, :html => { :style => 'width:50%; margin: 10px;'}) do |f| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <div class='form-group'>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

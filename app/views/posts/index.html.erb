@@ -1,0 +1,8 @@
+<h1 class="h1-small-margin">Blog Posts</h1>
+<% @posts.each do |post| %>
+  <div class="card card-body bg-light" style="margin: 30px;">
+    <h3><%= post.title %></h3>
+    <p><%= post.body %></p>
+    <p><%= link_to "Read More", post_path(post), class: 'btn btn-secondary' %></p>
+  </div>
+<% end %>

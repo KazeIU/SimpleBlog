@@ -1,0 +1,5 @@
+<h1 class="h1-small-margin"><%= @post.title %></h1>
+<p class="card card-body bg-light" style="margin: 30px;"><%= @post.body %></p>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), class:'btn btn-secondary' %>
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class:'btn btn-danger' %>
